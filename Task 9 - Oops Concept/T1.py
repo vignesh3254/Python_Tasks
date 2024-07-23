@@ -10,8 +10,16 @@ class Person:
         self.country=country
         self.dob=dob
 
-    def display(self,age=25):
-        print(f"Name:{self.name}\nCountry:{self.country}\nDate of Birth:{self.dob}\nAge:{age}")
+    def cal_age(self,current_year):
 
-obj=Person("Bala","India","25-Jun-1997")
+        age=current_year - self.dob
+        return age
+    
+    def display(self):
+        print(f"Name:{self.name}\nCountry:{self.country}\nDate of Birth:{self.dob}")
+
+obj=Person("Bala","India",1997)
 obj.display()
+
+age=obj.cal_age(2024)
+print("Age is :",age)
